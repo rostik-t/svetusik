@@ -1,0 +1,629 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="bootstrap/fotorama/fotorama.css" rel="stylesheet">
+    <script src="bootstrap/fotorama/fotorama.js"></script>
+    <!--<link href="bootstrap/css/overlay-apple.css" rel="stylesheet">-->
+
+    <script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+    <!-- Optionally add helpers - button, thumbnail and/or media -->
+    <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+    <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+    <title>Светусик - Svetusik</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Custom styles for this template -->
+
+    <style>
+        body {
+            background-image: url(photos/background_095.jpg);
+            background-repeat:repeat;
+        }
+        .arrowBottom {
+            width: 200px;
+            height: 700px;
+            overflow: hidden;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.5; 
+        }
+
+        .center {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .fotorama__html {
+            vertical-align: bottom;
+            top: 85%;
+        }
+
+        .fr_caption {
+            text-align: center;
+            color: whitesmoke;
+            /*font-style: oblique;*/
+            font-family: font4;
+        }
+
+        .fr_caption span {
+            background-color: gray;
+            opacity: 0.7;
+        }
+
+        .svetusik_h1 {
+            font-family: font3;
+            font-size: 100px;
+        }
+
+        .font3 {
+            font-family: font3;
+        }
+
+        @font-face {
+            font-family: font3;
+            src: url(font3.ttf);
+        }
+        @font-face {
+            font-family: font4;
+            src: url(font4.ttf);
+        }
+
+        .container {
+            width: 960px !important;
+        }
+
+        @media (min-width: 1px) {
+            .container {
+                max-width: 940px;
+            }
+
+            .col-lg-1,
+            .col-lg-2,
+            .col-lg-3,
+            .col-lg-4,
+            .col-lg-5,
+            .col-lg-6,
+            .col-lg-7,
+            .col-lg-8,
+            .col-lg-9,
+            .col-lg-10,
+            .col-lg-11,
+            .col-lg-12 {
+                float: left;
+            }
+
+            .col-lg-1 {
+                width: 8.333333333333332%;
+            }
+
+            .col-lg-2 {
+                width: 16.666666666666664%;
+            }
+
+            .col-lg-3 {
+                width: 25%;
+            }
+
+            .col-lg-4 {
+                width: 33.33333333333333%;
+            }
+
+            .col-lg-5 {
+                width: 41.66666666666667%;
+            }
+
+            .col-lg-6 {
+                width: 50%;
+            }
+
+            .col-lg-7 {
+                width: 58.333333333333336%;
+            }
+
+            .col-lg-8 {
+                width: 66.66666666666666%;
+            }
+
+            .col-lg-9 {
+                width: 75%;
+            }
+
+            .col-lg-10 {
+                width: 83.33333333333334%;
+            }
+
+            .col-lg-11 {
+                width: 91.66666666666666%;
+            }
+
+            .col-lg-12 {
+                width: 100%;
+            }
+
+            .col-lg-push-1 {
+                left: 8.333333333333332%;
+            }
+
+            .col-lg-push-2 {
+                left: 16.666666666666664%;
+            }
+
+            .col-lg-push-3 {
+                left: 25%;
+            }
+
+            .col-lg-push-4 {
+                left: 33.33333333333333%;
+            }
+
+            .col-lg-push-5 {
+                left: 41.66666666666667%;
+            }
+
+            .col-lg-push-6 {
+                left: 50%;
+            }
+
+            .col-lg-push-7 {
+                left: 58.333333333333336%;
+            }
+
+            .col-lg-push-8 {
+                left: 66.66666666666666%;
+            }
+
+            .col-lg-push-9 {
+                left: 75%;
+            }
+
+            .col-lg-push-10 {
+                left: 83.33333333333334%;
+            }
+
+            .col-lg-push-11 {
+                left: 91.66666666666666%;
+            }
+
+            .col-lg-pull-1 {
+                right: 8.333333333333332%;
+            }
+
+            .col-lg-pull-2 {
+                right: 16.666666666666664%;
+            }
+
+            .col-lg-pull-3 {
+                right: 25%;
+            }
+
+            .col-lg-pull-4 {
+                right: 33.33333333333333%;
+            }
+
+            .col-lg-pull-5 {
+                right: 41.66666666666667%;
+            }
+
+            .col-lg-pull-6 {
+                right: 50%;
+            }
+
+            .col-lg-pull-7 {
+                right: 58.333333333333336%;
+            }
+
+            .col-lg-pull-8 {
+                right: 66.66666666666666%;
+            }
+
+            .col-lg-pull-9 {
+                right: 75%;
+            }
+
+            .col-lg-pull-10 {
+                right: 83.33333333333334%;
+            }
+
+            .col-lg-pull-11 {
+                right: 91.66666666666666%;
+            }
+
+            .col-lg-offset-1 {
+                margin-left: 8.333333333333332%;
+            }
+
+            .col-lg-offset-2 {
+                margin-left: 16.666666666666664%;
+            }
+
+            .col-lg-offset-3 {
+                margin-left: 25%;
+            }
+
+            .col-lg-offset-4 {
+                margin-left: 33.33333333333333%;
+            }
+
+            .col-lg-offset-5 {
+                margin-left: 41.66666666666667%;
+            }
+
+            .col-lg-offset-6 {
+                margin-left: 50%;
+            }
+
+            .col-lg-offset-7 {
+                margin-left: 58.333333333333336%;
+            }
+
+            .col-lg-offset-8 {
+                margin-left: 66.66666666666666%;
+            }
+
+            .col-lg-offset-9 {
+                margin-left: 75%;
+            }
+
+            .col-lg-offset-10 {
+                margin-left: 83.33333333333334%;
+            }
+
+            .col-lg-offset-11 {
+                margin-left: 91.66666666666666%;
+            }
+        }
+       
+    </style>
+
+</head>
+<!-- NAVBAR
+================================================== -->
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="well" style="text-align: center">
+            <h1 class="svetusik_h1">Кто такой Светусик?</h1>
+        </div>
+    </div>
+    <br />
+    <br />
+    <img class="arrowBottom" src="pictures/arrow.jpg" />
+    <br />
+    <br />
+    <div class="well" style="text-align: center">
+        <h1 class="svetusik_h1">А вот кто:</h1>
+    </div>
+
+    <div id="fotorama" class="fotorama center" data-loop="true" data-width="100%" data-ratio="16/9" data-maxheight="90%" data-keyboard="true" data-allowfullscreen="native" data-shadows="false">
+        <div data-img="photos/best_mum.png">
+            <div class="fr_caption">
+                <h1><span> &nbsp;Самая любимая мама!&nbsp; </span></h1>
+            </div>
+        </div>
+        <div data-img="photos/best_woman.png">
+            <div class="fr_caption">
+                <h1><span> &nbsp;Самая красивая женщина!&nbsp; </span></h1>
+            </div>
+        </div>
+        <div data-img="photos/best_sister.png">
+            <div class="fr_caption">
+                <h1><span> &nbsp;Самая потрясная сестра!&nbsp; </span></h1>
+            </div>
+        </div>
+        <div data-img="photos/just_the_best2.png">
+            <div class="fr_caption">
+                <h1><span> И просто самая лучшая! </span></h1>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div class="container marketing">
+
+
+            <div class="well" style="text-align: center">
+                <h1 class="font3">А также:</h1>
+            </div>
+
+        <img class="arrowBottom" src="pictures/arrow.jpg" />
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="alert alert-success"><h3 class="text-center">Лучший дизайнер</h3></div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">З&aacute;мков</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/design_1.jpg"><img style="width: 100%" src="photos/design_1_min.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">Фешенебельных квартир</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/design_2.jpg"><img style="width: 100%" src="photos/design_2_min.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">И малюююсеньких комнатушек</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/design_3.jpg"><img style="width: 100%" src="photos/design_3_min.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="arrowBottom" src="pictures/arrow.jpg" />
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="alert alert-warning"><h3 class="text-center">Лучший инженер</h3></div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">В чем угодно разберется!</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/engineer_1_col.jpg"><img style="width: 100%" src="photos/engineer_1_col.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">Что угодно запустит!</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/engineer_2.jpg"><img style="width: 100%" src="photos/engineer_2_min.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <div class="well" style="text-align: center">
+            <h1 class="font3">И, конечно же...</h1>
+        </div>
+        <img class="arrowBottom" src="pictures/arrow.jpg" />
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <div class="alert alert-danger"><h3 class="text-center">Лучший танцор!</h3></div>
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center">Королева танцпола</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row featurette">
+                    <div class="col-lg-12">
+                        <a class="fancybox" rel="group" href="photos/dancer.jpg"><img style="width: 100%" src="photos/dancer_min.jpg" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="well" style="text-align: center">
+            <h1 class="font3">Мы желаем тебе...</h1>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Если пить - то только хорошие напитки!</span></h2>
+            </div>
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/esli_1.jpg"><img style="max-width: 100%" src="photos/esli_1_min.jpg" alt="" /></a>
+            </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/esli_2.jpg"><img style="max-width: 100%" src="photos/esli_2_min.jpg" alt="" /></a>
+            </div>
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Если завтракать - то только кофе с раковыми шейками</span></h2>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Если играть - то только по-крупному!</span></h2>
+            </div>
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/esli_3.jpg"><img style="max-width: 100%" src="photos/esli_3_min.jpg" alt="" /></a>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="well" style="text-align: center">
+            <h1 class="font3">А еще...</h1>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/radost.jpg"><img style="max-width: 100%" src="photos/radost_min.jpg" alt="" /></a>
+
+            </div>
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Пускай радость от жизни никогда не покидает тебя!</span></h2>
+            </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Что бы тебя ни окружало - пусть это всегда будет мягким и пушистым :)</span></h2>
+            </div>
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/soft.jpg"><img style="max-width: 100%" src="photos/soft_min.jpg" alt="" /></a>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <a class="fancybox" rel="group" href="photos/krasivaya_jizn.jpg"><img style="max-width: 100%" src="photos/krasivaya_jizn_min.jpg" alt="" /></a>
+            </div>
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Никогда не забывай, что красиво жить не только можно, но и нужно!</span></h2>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="well" style="text-align: center">
+            <h1 class="font3">И наконец...</h1>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-lg-6">
+                <h2><span class="text-muted">Пусть любовь и дальше объединяет континенты...</span></h2>
+            </div>
+            <div class="col-lg-6">
+                    <a class="fancybox" rel="group" href="photos/kontinenti.jpg"><img style="max-width: 100%" src="photos/kontinenti_min.jpg" alt="" /></a>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-lg-6">
+               <a class="fancybox" rel="group" href="photos/hearts.jpg"><img style="max-width: 100%" src="photos/hearts_min.jpg" alt="" /></a>
+            </div>
+            <div class="col-lg-6">
+                <h2><span class="text-muted">...всё ярче разгораясь в наших сердцах!</span></h2>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="well" style="text-align: center">
+            <h1 class="svetusik_h1">С Днем Рождения!</h1>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <hr class="featurette-divider">
+        <div class="well" style="text-align: center">
+            <h2 class="font3">Вместо подписи...</h2>
+        </div>
+        <div class="row featurette">
+            <div class="col-lg-12">
+                <a class="fancybox" rel="group" href="photos/ot_detok.jpg"><img style="width: 100%" src="photos/ot_detok.jpg" alt="" /></a>
+            </div>
+        </div>
+        <hr class="featurette-divider">
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Наверх</a></p>
+            <p>&copy; 2014 <span title="Rost The Great">RTG</span> Design Studio. На правах подарка любимых деток любимой маме!</p>
+        </footer>
+
+    </div><!-- /.container -->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="bootstrap/assets/js/docs.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".fancybox").fancybox();
+            });
+        </script>
+</body>
+</html>
+
+
